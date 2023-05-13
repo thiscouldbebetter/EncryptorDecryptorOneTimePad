@@ -1,0 +1,100 @@
+<html>
+<body>
+
+<div id="divUi">
+
+	<h3>One-Time Pad Encryptor/Decryptor</h3>
+
+	<p>
+		Specify a maximum message size,
+		then click the "Generate" button to generate a psuedorandom key.
+		Send the generated key to a recipient via some secure method,
+		then compose a message and click the "Ecrypt Message with Key" button
+		to encrypt the message.  The encrypted message can be sent
+		to the recipient over a unsecure channel.
+		The recipient can then load the key they received earlier
+		along with the encrypted message,
+		then click the "Decrypt Message With Key" button to see the message.
+	</p>
+
+	<div>
+		<label>Max Message Length in Symbols:</label>
+		<input id="inputMessageLengthMaxInSymbols" value="1024"></input>
+	</div>
+
+	<table>
+
+		<tr>
+			<td>
+				<div>
+					<label>Unencrypted Message as Numbers:</label>
+					<button onclick="UiEventHandler.buttonMessageLoadDemo_Clicked()">
+						Load Demo
+					</button>
+					<br />
+					<textarea id="textareaMessageUnencryptedAsNumbers" cols="40" rows="8"></textarea>
+				</div>
+			</td>
+
+			<td>
+				<button onclick="UiEventHandler.buttonMessageUnencryptedNumbersToText_Clicked()">
+					To Text &gt;
+				</button>
+				<br />
+				<button onclick="UiEventHandler.buttonMessageUnencryptedTextToNumbers_Clicked()">
+					&lt; To Numbers
+				</button>
+			</td>
+
+			<td>
+				<div>
+					<label>Unencrypted Message as Text:</label>
+					<br />
+					<textarea id="textareaMessageUnencryptedAsText" cols="40" rows="8"></textarea>
+				</div>
+			</td>
+
+		</tr>
+	</table>
+
+	<table>
+		<tr>
+			<td>
+				<div>
+					<button onclick="UiEventHandler.buttonEncrypt_Clicked()">v Encrypt v</button>
+					<button onclick="UiEventHandler.buttonDecrypt_Clicked()">^ Decrypt ^</button>
+				</div>
+			</td>
+
+			<td>
+
+				<div>
+					<label>Encryption Key:</label>
+					<button onclick="UiEventHandler.buttonGenerate_Clicked()">Generate (for demo purposes only)</button>
+					<br />
+					<textarea id="textareaEncryptionKeyAsDecimals" cols="40" rows="8"></textarea>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<table>
+		<tr>
+			<td>
+				<div>
+					<label>Encrypted Message:</label>
+					<br />
+					<textarea id="textareaMessageEncrypted" cols="40" rows="8"></textarea>
+				</div>
+			</td>
+		</tr>
+
+	</table>
+
+</div>
+
+<script type="text/javascript" src="EncryptionKey.js"></script>
+<script type="text/javascript" src="UiEventHandler.js"></script>
+
+</body>
+</html>
